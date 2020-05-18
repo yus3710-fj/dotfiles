@@ -1,0 +1,22 @@
+Host ras
+     HostName
+     LocalForward 8085
+     ForwardAgent yes
+
+Host hogehoge
+     HostName
+     RequestTTY force
+     LocalForward 8085
+     ForwardAgent yes
+
+Host hogehoge
+     RemoteCommand ssh
+
+Host foobar
+     HostName
+     ProxyCommand ssh ras nc %h %p
+
+Host *
+     User
+     TCPKeepAlive yes
+     ServerAliveInterval 300
