@@ -11,7 +11,8 @@
 ## 設定ファイル
 - bash
 - zsh
+- emacs
+  - スクリプトでは`~/.emacs.el`を作りますが、うまくいかない場合は`~/.emacs`や`~/.emacs.d/init.el`にしてみてください。
 
 forwardとsshはサンプルのみ示しています。
 
-emacsはちょっと待って。

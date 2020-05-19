@@ -3,7 +3,7 @@ DIR=`cd $(dirname $0) && pwd`
 
 #素朴なやつ
 #あとで自動化するから許せ
-DOTFILES=(bash_logout bash_profile bashrc zshrc)
+DOTFILES=(bash_logout bash_profile bashrc zshrc emacs.el)
 
 echo [link dotfiles]
 echo -e "\033[1;36m"$DIR "->" $HOME"\033[m"
@@ -18,3 +18,7 @@ do
     fi
     ln -sf ${DIR}/$f ${HOME}/.$f
 done
+
+echo [git setup]
+echo core.editor
+git config --global core.editor emacs #commitメッセージ用のエディタをemacsに設定
