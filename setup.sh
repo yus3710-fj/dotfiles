@@ -1,16 +1,20 @@
 #!/bin/bash
 DIR=`cd $(dirname $0) && pwd`
 
-#素朴なやつ
-#あとで自動化するから許せ
-DOTFILES=(bash_logout bash_profile bashrc zshrc emacs.el)
+#リンクを張らないファイルだけ手動で指定すればあとは自動でやってくれる
+#今後これでうまくいかなくなる可能性もありますが…
+DOTFILES=`ls -F ${DIR} | grep -v README | grep -v \* | grep -v /`
+IGNORE=(forward)
 
 echo [link dotfiles]
 echo -e "\033[1;36m"$DIR "->" $HOME"\033[m"
 for f in ${DOTFILES[@]}
 do
+    if [ `echo ${IGNORE[@]} | grep -w $f` ]; then #IGNOREに入っているファイルだったら無視
+        continue
+    fi
     echo .$f
-    EXIST=`ls -aF ${HOME} | grep $f | grep -v @` #リンクじゃない素の同名ファイルを見つける
+    EXIST=`ls -aF ${HOME} | grep -w $f | grep -v @` #リンクじゃない素の同名ファイルを見つける
     if [ ${EXIST} ] #もしあったらdotをとる
     then
         echo "== original file exists! dot of the filename has been removed. =="
