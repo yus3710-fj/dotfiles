@@ -31,3 +31,4 @@ export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:$
 export LD_LIBRARY_PATH=$TVM_HOME/build:${LD_LIBRARY_PATH}
 export SCREENDIR=$HOME/.screen
 export PATH=$PATH:/opt/carch/bin
+export LESSCHARSET=utf-8
