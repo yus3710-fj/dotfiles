@@ -53,3 +53,6 @@ function redrev() {
 }
 
 alias -g rederr='2> >(redrev)'
+
+# Array starts from 0
+setopt ksharrays
