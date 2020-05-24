@@ -23,6 +23,13 @@ do
     ln -sf ${DIR}/$f ${HOME}/.$f
 done
 
+#イニシャライズかなと思ったけどsudo使ってインストールするのとはちょっと違うのでこっちに書く
 echo [git setup]
-echo core.editor
+echo please input your name and email.
+cd ${DIR}
+read -p "git config --local user.name " GIT_NAME
+git config --local user.name ${GIT_NAME}
+read -p "git config --local user.email " GIT_MAIL
+git config --local user.email ${GIT_MAIL}
+echo git config --global core.editor emacs
 git config --global core.editor emacs #commitメッセージ用のエディタをemacsに設定
