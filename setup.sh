@@ -33,3 +33,4 @@ read -p "git config --local user.email " GIT_MAIL
 git config --local user.email ${GIT_MAIL}
 echo git config --global core.editor emacs
 git config --global core.editor emacs #commitメッセージ用のエディタをemacsに設定
+git config --global alias.st status
