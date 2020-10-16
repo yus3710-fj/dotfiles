@@ -123,3 +123,9 @@ alias python='rederr python3'
 alias ssh-add='if [ -z "$SSH_AGENT_PID" ]; then eval `ssh-agent`;fi; ssh-add'
 alias ps='ps xfo pid,nice,start,time,command'
 alias gnutime='/usr/bin/time'
+
+#for screen
+if [ -n "$STY" ]
+then
+    PS1='${debian_chroot:+($debian_chroot)}[\D{%m/%d %H:%M:%S}] \[\e[01;32m\]\u@\H\[\e[00m\]:\[\e[01;34m\]$PWD\[\e[00m\]\n\[\e[00m\]\$ '
+fi
