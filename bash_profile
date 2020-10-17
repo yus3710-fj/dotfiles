@@ -30,5 +30,5 @@ export TVM_HOME=/mnt/d/work/Laboratory/tvm
 export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:${PYTHONPATH}
 export LD_LIBRARY_PATH=$TVM_HOME/build:${LD_LIBRARY_PATH}
 export SCREENDIR=$HOME/.screen
-export PATH=$PATH:/opt/carch/bin
+export PATH=$PATH:/opt/carch/bin:$HOME/.dotfiles/bin
 export LESSCHARSET=utf-8
