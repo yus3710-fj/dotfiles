@@ -123,6 +123,7 @@ alias python='rederr python3'
 alias ssh-add='if [ -z "$SSH_AGENT_PID" ]; then eval `ssh-agent`;fi; ssh-add'
 alias ps='ps xfo pid,nice,start,time,command'
 alias gnutime='/usr/bin/time'
+alias cf10='clang-format-10 -i -style=file'
 
 #for screen
 if [ -n "$STY" ]
