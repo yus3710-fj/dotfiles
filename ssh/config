@@ -4,17 +4,21 @@ Host ras
      ForwardAgent yes
 
 Host hogehoge
-     HostName
+     HostName ras
      RequestTTY force
      LocalForward 8085
      ForwardAgent yes
 
 Host hogehoge
-     RemoteCommand ssh
+     # hogehoge(と見せかけてras)に接続した後に下記コマンドが実行される
+     RemoteCommand ssh hogehoge
 
 Host foobar
-     HostName
-     ProxyCommand ssh ras nc %h %p
+     HostName foobar
+     # 下記コマンドが上記HostNameに接続する前にローカルで実行される
+     # 具体的にはクライアントの入出力がrasを介してfoobarに伝わるようになる
+     ProxyCommand ssh -W %h:%p ras
+     #ProxyCommand ssh ras nc %h %p
 
 Host *
      User
