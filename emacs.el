@@ -22,3 +22,6 @@
 
 ;; スクロールは１行ごとに
 (setq scroll-conservatively 1)
+
+;; タグジャンプで元に戻る
+;(global-set-key (kbd "M-*") 'pop-tag-mark)
