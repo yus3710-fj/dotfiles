@@ -4,7 +4,7 @@ DIR=`cd $(dirname $0) && pwd`
 #リンクを張らないファイルだけ手動で指定すればあとは自動でやってくれる
 #今後これでうまくいかなくなる可能性もありますが…
 DOTFILES=`ls -F ${DIR} | grep -v README | grep -v \* | grep -v /`
-IGNORE=(forward)
+IGNORE=(env.bash)
 
 echo [link dotfiles]
 echo -e "\033[1;36m"$DIR "->" $HOME"\033[m"
