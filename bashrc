@@ -126,6 +126,8 @@ alias gnutime='/usr/bin/time'
 alias cf10='clang-format-10 -i -style=file'
 alias grep='grep --color=auto -n'
 alias diff='diff --color=auto'
+alias targz='tar -zxvf'
+alias notice="for i in \`seq 1 10\`; do echo -n $'\a'; sleep 0.1; done"
 
 #for screen
 if [ -n "$STY" ]
