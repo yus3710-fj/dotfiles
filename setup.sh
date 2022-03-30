@@ -33,5 +33,7 @@ read -p "git config --local user.email " GIT_MAIL
 git config --local user.email ${GIT_MAIL}
 echo git config --global core.editor emacs
 git config --global core.editor emacs #commitメッセージ用のエディタをemacsに設定
+echo git config --global "url.git@github.com:.pushinsteadof" "https://github.com/"
+git config --global "url.git@github.com:.pushinsteadof" "https://github.com/" #pushするときだけSSH接続
 git config --global alias.st status
 git config --global alias.co checkout
