@@ -17,4 +17,4 @@ sudo apt update
 sudo apt upgrade -y
 
 echo [install packages]
-sudo apt install emacs build-essential gcc-multilib g++-multilib zsh screen make cmake gdb ninja-build python-pip python3-pip sshfs llvm graphviz
+sudo apt install emacs build-essential gcc-multilib g++-multilib zsh screen make cmake gdb ninja-build python3-pip sshfs llvm graphviz ruby gfortran libopenmpi-dev libcoarrays-dev libcaf-openmpi-3
