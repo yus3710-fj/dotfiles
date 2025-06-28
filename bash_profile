@@ -26,9 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-export TVM_HOME=/mnt/d/work/Laboratory/tvm
-export PYTHONPATH=$TVM_HOME/python:$TVM_HOME/topi/python:$TVM_HOME/nnvm/python:${PYTHONPATH}
-export LD_LIBRARY_PATH=$TVM_HOME/build:${LD_LIBRARY_PATH}
+export NVCOMPILERS=/opt/nvidia/hpc_sdk
+export NVARCH=`uname -s`_`uname -m`
+export NVHPC_ROOT=$NVCOMPILERS/$NVARCH/24.5
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 export SCREENDIR=$HOME/.screen
-export PATH=$PATH:/opt/carch/bin:$HOME/.dotfiles/bin
+export PATH=$PATH:/usr/local/cuda/bin:$NVHPC_ROOT/compilers/bin:$HOME/.dotfiles/bin
 export LESSCHARSET=utf-8
