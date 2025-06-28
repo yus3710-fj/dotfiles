@@ -122,9 +122,9 @@ alias java='rederr java'
 alias python='rederr python3'
 alias ssh-add='if [ -z "$SSH_AGENT_PID" ]; then eval `ssh-agent`;fi; ssh-add'
 alias ps='ps xfo pid,nice,start,time,command'
+alias mytop="top -u $USER"
 alias gnutime='/usr/bin/time'
-alias cf10='clang-format-10 -i -style=file'
-alias grep='grep --color=auto -n'
+alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 alias targz='tar -zxvf'
 alias notice="for i in \`seq 1 10\`; do echo -n $'\a'; sleep 0.1; done"
