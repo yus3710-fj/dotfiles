@@ -82,6 +82,8 @@ if [ -x /usr/bin/dircolors ]; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+elif [ `echo $OSTYPE | grep "darwin"` ]; then
+    alias ls='ls -G'
 fi
 
 # colored GCC warnings and errors

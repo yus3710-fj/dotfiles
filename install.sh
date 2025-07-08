@@ -10,11 +10,32 @@ if [ -n "$WSL_DISTRO_NAME" ]; then
     sudo apt install language-pack-ja
     sudo update-locale LANG=ja_JP.UTF-8
     sudo dpkg-reconfigure tzdata
+elif [ `echo $OSTYPE | grep "darwin"` ]; then
+    if [ ! -x /opt/homebrew/bin/brew ]; then
+        echo "You need install Homebrew first."
+        echo "See https://brew.sh"
+        exit 1
+    fi
 fi
 
 echo [upgrade packages]
-sudo apt update
-sudo apt upgrade -y
+case ${OSTYPE} in
+    linux*)
+        sudo apt update
+        sudo apt upgrade -y
+        ;;
+    darwin*)
+        brew upgrade
+        ;;
+esac
 
 echo [install packages]
-sudo apt install emacs build-essential gcc-multilib g++-multilib zsh screen make cmake gdb ninja-build python3-dev sshfs llvm lld graphviz ruby-full gfortran libopenmpi-dev libcoarrays-dev libcaf-openmpi-3
+case ${OSTYPE} in
+    linux*)
+        sudo apt install emacs build-essential gcc-multilib g++-multilib gfortran make cmake gdb ninja-build \
+                         zsh screen python3-dev sshfs llvm lld graphviz ruby-full libopenmpi-dev libcoarrays-dev libcaf-openmpi-3
+        ;;
+    darwin*)
+        brew install emacs gcc cmake ninja lld
+        ;;
+esac

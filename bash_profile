@@ -33,3 +33,5 @@ export LD_LIBRARY_PATH=/usr/lib/wsl/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH}
 export SCREENDIR=$HOME/.screen
 export PATH=$PATH:/usr/local/cuda/bin:$NVHPC_ROOT/compilers/bin:$HOME/.dotfiles/bin
 export LESSCHARSET=utf-8
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
