@@ -32,7 +32,7 @@ esac
 echo [install packages]
 case ${OSTYPE} in
     linux*)
-        sudo apt install emacs build-essential gcc-multilib g++-multilib gfortran make cmake gdb ninja-build \
+        sudo apt install emacs build-essential gcc-multilib g++-multilib libstdc++-14-dev gfortran make cmake gdb ninja-build \
                          zsh screen python3-dev sshfs llvm lld graphviz ruby-full libopenmpi-dev libcoarrays-dev libcaf-openmpi-3
         ;;
     darwin*)
