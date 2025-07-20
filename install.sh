@@ -36,6 +36,6 @@ case ${OSTYPE} in
                          zsh screen python3-dev sshfs llvm lld graphviz ruby-full libopenmpi-dev libcoarrays-dev libcaf-openmpi-3
         ;;
     darwin*)
-        brew install emacs gcc cmake ninja lld
+        brew install emacs gcc cmake ninja lld ruby
         ;;
 esac
