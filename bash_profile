@@ -35,5 +35,7 @@ export PATH=/opt/homebrew/opt/ruby/bin:$PATH:/usr/local/cuda/bin:$NVHPC_ROOT/com
 export LESSCHARSET=utf-8
 
 # for macOS
-export BASH_SILENCE_DEPRECATION_WARNING=1
-export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+if echo "$OSTYPE" | grep -q "darwin"; then
+  export BASH_SILENCE_DEPRECATION_WARNING=1
+  export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+fi
